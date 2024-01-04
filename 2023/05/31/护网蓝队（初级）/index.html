@@ -1,0 +1,617 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>护网蓝队（初级） | AiENG</title><meta name="keywords" content="网安,面试"><meta name="author" content="AiENG"><meta name="copyright" content="AiENG"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="护网蓝队（初级）"><meta name="application-name" content="护网蓝队（初级）"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="护网蓝队（初级）"><meta property="og:url" content="http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/index.html"><meta property="og:site_name" content="AiENG"><meta property="og:description" content="护网蓝队（初级）主要是会看各种攻击payload，注意常见的payload练习各种漏洞的利用方法，学会看利用漏洞的请求长什么样，payload长什么样，payload长什么样给个请求包，能不能认出来是攻击流量，是的话是什么漏洞的利用； 蓝队（初级）：基本漏洞扫描和渗透能力 日志分析 安全设备告警分析"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg"><meta property="article:author" content="AiENG"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg"><meta name="description" content="护网蓝队（初级）主要是会看各种攻击payload，注意常见的payload练习各种漏洞的利用方法，学会看利用漏洞的请求长什么样，payload长什么样，payload长什么样给个请求包，能不能认出来是攻击流量，是的话是什么漏洞的利用； 蓝队（初级）：基本漏洞扫描和渗透能力 日志分析 安全设备告警分析"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?de2b8c0d2d4c5daa1fa68c4eefcf28a1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://aienghf-twikoo.hf.space',
+  commentBarrageConfig:{"enable":true,"maxBarrage":1,"barrageTime":8000,"accessToken":"be6c519dc72e8246432872bc15a58f9a","mailMd5":""},
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: AiENG","link":"链接: ","source":"来源: AiENG","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'AiENG',
+  title: '护网蓝队（初级）',
+  postAI: '',
+  pageFillDescription: '护网蓝队初级主要是会看各种攻击注意常见的练习各种漏洞的利用方法学会看利用漏洞的请求长什么样长什么样长什么样给个请求包能不能认出来是攻击流量是的话是什么漏洞的利用蓝队初级基本漏洞扫描和渗透能力日志分析安全设备告警分析能看懂安全产品前置知识概况信息收集服务器的相关信息真实系统类型版本开放端口等网站指纹识别证书记录等信息姓名备案邮件电话反差邮箱丢社工库社工准备等子域名收集旁站段等针对化搜索文件中间件版本弱口令扫描等扫描网站目录结构爆后台网站测试文件备份等敏感文件泄露等协议通用漏洞源码等漏洞挖掘浏览网站查看网站的规模功能点特点端口弱口令目录扫描对响应端口进行漏洞探测弱口令等开始检测漏洞如注入代码执行命令执行越权访问任意文件读取下载文件包含远程命令执行弱口令编辑器漏洞暴力破解重放攻击服务器漏洞检测最后使用漏扫工具等内容管理系统位于前端和后端办公系统一般可以搜索可能会存在对应的源码或者版本漏洞构建在现有网络基础之上的智能虚拟网络依靠部署在各地的边缘服务器通过中心平台的负载均衡内容分发调度等功能模块使用户就近获取所需内容降低网络拥塞提高用户访问响应速度和命中率利用谷歌搜索寻找后台用户信息泄露源代码泄露未授权访问文件下载网站配置密码远程文件包含漏洞等信息中间件是一种独立的系统软件或服务程序连接应用程序或系统即使不同接口仍然能交互信息漏洞利用提权提权提权提权内核漏洞提权溢出提权注入失效的身份认证敏感数据泄露外部实体失效的访问控制安全配置错误跨站脚本不安全的反序列化使用含有已知漏洞的组件不足的日志记录和监控基础漏洞注入原理口头语言用户的输入嵌入到语句中然后被当做代码执行成因未对用户输入的数据做验证或者处理预编译防御预编译能够防止注入但是不能处理和特殊字符黑名单对特殊字符进行转义过滤替换或者删除白名单对用户输入进行限制正则表达式限制规范编码和字符集编码不同可能会导致宽字节注入参数化查询原理不会把参数的内容当做语句执行完成编译后套用参数运行分类头注入联合查询注入报错注入需要用到的函数产生一个之间随机数随机产生一个的随机数运行多次产生的结果一样向下取整随机产生和两个数分组排列统计数量将字符串连接起来布尔盲注堆叠时间盲注需要用到的函数如果条件成立返回否则返回用啥语句替代表示延迟几秒从左向右截取字符串返回其前位取字符串的左边第一位起字长的字符串返回字符的码返回字符串的长度返回指定列的值的数目宽字节注入编码数据库编码防御函数成因发送请求到时经过一次编码会将获取到的数据进行魔术引号的处理因为是双字节编码所以我们提交的这个字符和转译的反斜杠组成了新的汉字然后数据库处理的时候是根据去处理的然后单引号就逃逸了出来原理在数据库中使用宽字符集在中没有考虑这个问题由于在中是两个字符在中会对进行转义把变成面试中问题被过滤了要怎么办过滤关键字使用大小写绕过双写绕过编码绕过过滤特殊字符空格使用编码绕过过滤注释使用添加一个闭合方式绕过逻辑运算绕过过滤单引号使用宽字符绕过前提使用编码过滤明码数据使用加密发送数据绕过代替空格如何写利用日志写权限关闭知道文件路径的前提日志路径一句话路径一句话路径取得了权限之后要怎么获取系统权限提权利用了高权限创建一个可以调用的函数的动态链接库导出文件后我们就可以直接在命令框输入限制条件数据库没有开启安全模式确认是否为空已知的数据库账号具有对数据库和的权限最好是最高权限有写入到数据库安装目录的权限提权基本上在的环境下才可以成功原理是目录下的文件每隔几秒就会被系统执行一次因为这个里面有一部分是脚本所以可以利用这个脚本来调用来执行系统命令如果有权限操作目录的话就可以来执行任意命令了以上和以下有什么区别以下没有系统表只能暴力跑表为何一个数据库的站只有一个端口开放更改了数据库端口没有扫描出来站库分离端口不对外开放常见有几种跨站脚本攻击原理通过拼接恶意的代码利用语句来执行攻击实现对用户浏览器的攻击类型反射型攻击代码在里输出在响应中存储型把用户输入的数据存储在服务器上型通过修改页面的结点形成反射和的区别是处理输出而反射性是后台程序处理绕过大小写伪协议没有分号新标签进行测试双层标签绕过修复防御对输出内容实体化编码对的事件进行过滤对重要的设置防止客户端通过读取此头由服务端设置防范常问问题蠕虫产生条件用户之间产生交互行为的页面都可能造成蠕虫不一定需要存储型有的情况下如何长久控制后台登录处加一段记录登录账号密码的判断是否登录成功如果登录成功就把账号密码记录到一个生僻的路径的文件中或者直接发到自己的网站文件中在登录后才可以访问的文件中插入脚本存储型的危害此类型的漏洞是由于恶意攻击代码被持久化保存到服务器上然后被显示到页面之中这类漏洞经常出现在用户评论的页面攻击者精心构造代码保存到数据库中当其他用户再次访问这个页面时就会触发并执行恶意的代码从而窃取用户的敏感信息跨站请求伪造攻击客户端请求伪造原理利用一个可以发起网络请求的服务当作跳板来攻击内部其他服务常出现在能够对外发起网络请求的地方请求远程服务器资源的地方数据库内置功能邮件系统文件处理在线处理工具协议在有回显的情况下利用协议可以读取任意内容泄露安装软件版本信息查看端口操作内网服务等支持发出请求可以先截获请求包和请求包再构造成符合协议的请求协议是利用中一个最强大的协议俗称万能协议可用于反弹探测内网主机存活引发漏洞的函数文件写入字符串当是内网文件的时候会先去把这个文件的内容读出来再写入导致了文件读取主机名称端口号码错误号的接受变量错误提示的接受变量超时时间执行一个会话绕过利用例如与请求是相同的添加端口号利用短地址地址进制转换解析可以指向任意的域名利用利用伪协议对内网信息进行探测具体利用的方式协议查看文件协议探测端口协议支持请求同时在攻击内网上有极大作用利用协议访问反弹防御禁止跳转禁用不需要的协议黑名单内网区别与区别跨站脚本攻击利用站点内的信任用户盗取跨站请求伪造攻击通过伪装成信任用户请求信任的网站与区别跨站客户端请求伪造浏览器因为偷偷发送数据包服务器端请求伪造服务器因为你传的参数偷偷发送数据包客户端服务端文件上传原理由于程序员在对用户文件上传部分的控制不足或者处理缺陷而导致用户可以越过其本身权限向服务器上传可执行的动态脚本文件并通过此脚本文件获得了执行服务端命令的能力服务器解析漏洞绕过程序检测当碰到不认识的扩展名时将会从后向前解析直到碰到认识的扩展名为止如果都不认识则会暴露其源代码在上传文件时判断文件名是否是等脚本扩展名如果是则不允许上传这是可以构造类似等扩展名绕过程序检测并配合解析漏洞获取当建格式的文件夹时其目录下的任何扩展名的文件都将被当做文件进行解析当文件为时会以脚本来执行原理实际上是解析漏洞在配置文件中有一个关键选项一般是默认开启的所以解析到不存在的文件时会向前递归解析于是造成了解析漏洞攻击者可以上传木马文件然后在后面加上可随便命名就可以获得网站的比如访问此时会被当做脚本来解析这里的是不存在的绕过方法黑名单后缀名不完整等大小写在数据包中后文件缀名前加空格后缀名前加加上未循环验证可以使用类似的方法白名单截断图片马条件竞争防御后端验证采用服务端验证模式后缀验证基于白名单黑名单过滤验证基于上传自带类型艰检测内容检测文件头完整性检测自带函数过滤防护软件宝塔云盾等将上传文件与服务隔离白名单过滤限制上传文件类型文件上传路径设置为不可执行权限检查文件上传路径自带函数检测自定义函数检测图片渲染对上传文件重命名对文件内容压缩重新生成文件内容检查文件内容文件包含原理程序员开发的时候没有对包含的文件进行严格的过滤攻击者可以构造自己的图片木马文件当做执行常见包含函数找不到被包含的文件时只会产生警告脚本将继续运行找不到被包含的文件时只会产生警告脚本将继续运行如果该文件中的代码已经被包含则不会再次包含即程序只调用一次找不到被包含的文件时会产生致命错误并停止脚本运行找不到被包含的文件时会产生致命错误并停止脚本运行如果该文件中的代码已经被包含则不会再次包含即程序只调用一次封装协议访问本地文件系统访问网址访问访问各个输入输出流压缩流数据查找匹配的文件路径模式归档音频流处理交互式的流利用利用目录遍历利用解析漏洞结合文件上传绕过获取利用封装协议读取文件源码防御中使用限制访问在指定的目录区域过滤点反斜杠防止跨目录禁止服务器远程文件包含尽量不要使用动态包含可以在需要包含的页面固定写好危害敏感信息泄露任何文件读取伪协议文件包含读源码命令执行配合图片马获取序列化和反序列化原理在变量可控并且进行了操作的地方注入序列化对象实现代码执行未对用户输入的序列化字符串进行检测导致攻击者可以控制反序列化过程从而导致代码执行注入目录遍历等不可控后果在反序列化的过程中自动融发了某些魔术方法当进行反序列化的时候就有可能会触发对象中的一些魔术方法序列化函数将对象转换成字符串反序列化函数将字符串转换成对象魔术方法文件中存在可利用的类类中有魔术方法使用时触发使用时触发创建对象时触发对象被销毁时触发在对象上下文中调用不可访问的方法时触发在静态上下文中调用不可访问的方法时触发用于从不可访问的属性读取数据用于将数据写入不可访问的属性在不可访问的属性上调用或触发在不可访问的属性上使用时触发把类当作字符串使用时触发当脚本尝试将对象调用为函数时触发绕过的要点是成员属性数目大于实际数目时可绕过流量分析文件大量的请求目录扫描大量注入连续一个的多端口请求或多个的几个相同端口端口扫描爆破账号密码用菜刀链接的包请求高危端口可以爆破匿名登录网络共享未授权访问因为没有密码导致谁都能进能造成信息泄露反弹向服务器写入公钥直接用私钥连接各种漏洞上传但是是被过滤的可以使用后台部署包幽灵猫命令执行的默认开放端口反序列化核心原理为在正常的处理过程中对这两个紧邻的字符做了检测一旦匹配到类似于表达式结构的字符串就会触发替换机制将表达式的内容替换为表达式解析后的内容而不是表达式本身从而导致攻击者构造符合要求的表达式供系统执行漏洞成因特征在打印日志的时候如果日志内容中包含关键词攻击者就能将关键字所包含的内容当作变量来替换成任何攻击命令并且执行安全工具禁扫描在对主机执行扫描动作之前会发送一个包去探测远程主机是否存活如果对方有返回的话才认为这个扫描任务执行是有意义的并且开始扫描如果没有返回包则不执行扫描如果对方主机设置了禁在不加的情况下是不会返回扫描结果的此命令的意义在于是令去用命令去探测对方主机的存活情况如果对方的机器能通的话就告诉我们不绝对准确因为可能对方主机设置了禁半开放扫描在协议的三次握手的过程当中会由客户端向服务端发送包如果服务器的端口是开放的服务器则会返回一个包一个第三部再由客户端验证服务器的是否正确如若正确则发送包到服务器以便完成连接的建立这种扫描的原理就是客户端只执行第一步服务端执行第二步第三步不做了这种方法的好处是可以规避日志的记录协议三次完全扫描使用协议进行局域网内主机扫描这种扫描会令速度更快并且结果更加准确用于探测对方主机的操作系统的计算机的端口是有个的如果扫描全端口则写作默认情况是用于在禁时探测主机存活获取的参数的参数取得本质写入两个文件其中的一个可以让我们用来执行命令而另外一个可以让我们可以上传文件执行条件有三个网站必须是权限攻击者需要知道网站的绝对路径为主动转义的功能关闭渗透思路扫描工具可以根据情形定制一些常见端口扫描不仅可以扫还可以扫域名扫描的时候也可以加上想测试是否存在的漏洞的可以自定义暴破字典最后报告还可以导入导出渗透测试流程如果给你一个网站你的渗透测试思路是什么拿到一个待检测的站你觉得应该先做什么渗透测试步骤信息收集漏洞挖掘漏洞扫描漏洞利用权限提升日志清理总结报告以及修复方案信息收集服务器的相关信息真实系统类型版本开放端口等网站指纹识别包括证书等记录信息姓名备案邮箱电话反查邮箱丢社工库社工准备等子域名收集旁站段等针对化搜索文件中间件版本弱口令扫描等扫描网站目录结构爆后台网站测试文件备份等敏感文件泄漏等传输协议通用漏洞源码等漏洞挖掘浏览网站看看网站规模功能特点等端口弱口令目录等扫描对响应的端口进行漏洞探测比如心脏出血弱口令等注入上传命令注入安全检测敏感信息通信数据传输暴力破解任意文件上传越权访问未授权访问目录遍历文件包含重放攻击短信轰炸服务器漏洞检测最后使用漏扫工具等漏洞扫描开始检测漏洞如注入代码执行命令执行越权访问目录读取任意文件读取下载文件包含远程命令执行弱口令上传编辑器漏洞暴力破解等漏洞利用利用一些工具拿下或者一些其他的权限权限提升提权提权提权提权提权溢出提权脏牛内核漏洞提权日志清理总结报告及修复方案搜索引擎语法查询指定的管理系统搜索根域名带有的网站例从中搜索网站注意搜索要用作为名称例查找对应端口的资产例搜索制定协议类型在开启端口扫描的情况下有效例搜索证书或者等中带有域名的资产例搜索协议中带有账户文本的资产例搜索所有协议资产支持和两种例搜索服务器中间件名称例高级语法需要用管道符连接如如下后台查询指定域名的后台找摄像头谷歌语法寻找正文中含有关键字的网页寻找标题中含有关键字的网页用法和类似只不过可以指定多个词将返回中含有关键词的网页用法和类似只不过可以指定多个词所有关键词必须出现在在文本中指定访问的站点指定访问的文件类型显示页面的缓存版本使用夸克钟馗之眼侧重于容器指纹的搜索指纹搜索例如组件名称例如组件版本例如操作系统例如服务名称例如网段例如设备名例如关键字查询例如尝试弱口令例如搜索摄像设备等等简单过滤规则过滤过滤源地址目的地址过滤端口过滤端口源端口目的端口协议过滤直接输入协议名即可如协议参考见模式过滤过滤包菜刀蚁剑冰蝎流量特征菜刀特征使用了的方式加密了发送给菜刀马的指令其中的两个关键和这个名字是可变的蚁剑特征默认的请求头是但是可以通过修改文件中请求绕过其中流量最中明显的特征为这段代码基本是所有客户端链接类都有的一种代码蚁剑混淆加密后还有一个比较明显的特征即为参数名大多以这种形式下划线可替换所以以开头的参数名也很可能就是恶意流量冰蝎看包没有发现什么特征但是可以发现它是请求的头有属于弱特征头的浏览器版本很老特征分析这是一个强特征查阅资料可知的意思是只能提交二进制而且只能提交一个二进制如果提交文件的话只能提交一个文件后台接收参数只能有一个而且只能是流或者字节数组很少使用冰蝎特征默认字段的值很特殊而且每个阶段都一样冰蝎内置了十余种每次连接会随机选择一个进行使用但都是比较老的容易被检测到但是可以在中修改头就是冰蝎连接的特征冰蝎特征冰蝎取消动态密钥获取目前很多等设备都做了冰蝎的流量特征分析所以取消了动态密钥获取抓包看包没有发现什么特征但是可以发现它是请求的头属于弱特征头该特征属于弱特征通过可以修改冰蝎内置的默认个都比较老现实生活中很少有人使用所以这个也可以作为规则特征抓包特征分析这是一个强特征查阅资料可知的意思是只能提交二进制而且只能提交一个二进制如果提交文件的话只能提交一个文件后台接收参数只能有一个而且只能是流或者字节数组很少使用接下来是比较少接触的一部分关于应急响应网站被挂马如何应急取证登录服务器备份检查服务器敏感目录查毒搜索后门文件注意文件的时间用户后缀等属性调取日志系统中间件日志日志等处理恢复备份快照回滚最近一次确定入侵方法漏洞检测并进行修复溯源查入侵入侵手法网路攻击事件的确定等记录归档预防事件检测抑制根除恢复跟踪记录通用漏洞的应对等其他安全应急事件入侵排查的流程检查系统账号安全查看服务器是否有弱口令远程管理端口是否公开查看服务器是否有可疑账号输入命令查看服务器是否存在隐藏账号克隆账号结合日志查看管理员登录时间用户名是否存在异常检查异常端口进程检查端口连接情况是否有远程连接可疑连接查看目前的网络连接定位可疑的根据定位出的再通过命令进行进程定位检查启动项计划任务服务输入查看异常启动项输入打开注册表查看开机启动项检查系统相关信息输入查看系统信息日志分析输入打开事件查看器导出应用程序日志安全日志系统日志利用分析判断威胁情报是否有误就看进行流量分析判断是否为正常业务操作判断自己是否给就是给用盾查杀查日志分析攻击流量扫排查网站目录查看最近更改的文件查看未知端口未知进程排查恶意流量锁定感染进程有安全设备就看安全设备如果一台服务器被入侵后你会如何做应急响应查日志查服务查进程查看是否有可疑登陆新增账号内网报警处理方式可能会问的会不一样不会直接问首先就要是地位到具体的那一台机器既然报警那就说明知道了具体的漏洞类型加相应的补丁打上以为主一般都会问的查看系统日志查看登录失败的记录还有历史命令目录的查看执行过的命令在利用或者是查杀工具查杀查看目录下是非有带有免杀的木马彻底清除再到全流量分析的机子上看是非有经过其他的机器拿到攻击之后到线上的一些网站查看主机类型比如或者微步上查看是非是傀儡机跳板或者是国内个人云主机如果是个人云主机就可以通过查看是非有最近绑定的域名或者绑定者的邮箱知道邮箱之后就可以反查询出号说多少再利用社工查询到手机号到一个知名的网站上查询这个手机号有没有注册过什么网站可以去这些网站通过撞库的方法登入这样就可以拿到这个攻击者的身份证学校地址这些了思路是应急响应加固溯源被攻击后日志文件或者木马文件被删除排查恢复被删除的文件然后查日志查服务查进程查看是否有新增的账号安全设备进行报警如何看是否是外界的攻击即是否是误报或是内部人员进行的操作查看报警日志对报警的数据进行分析看是不是内部人员的操作还是真实的攻击流量分析是否是误报分析流量数据包可以用分析流量是不是正常的业务操作服务中了怎样从日志找位置被拿后怎么应急怎样快速定位从日志流量文件开始先定位位置查看敏感目录对新创建文件修改文件等进行查看找特殊权限文件比如流量的话从和去分析比如菜刀连木马第一个参数是这个是不会变的第二个是编码第三个是日志的话从找到的时间点去关联分析可以还原攻击手法快速定位就是看进程和内存看占用时间长和占用率高的设备报警注入的报警能看到攻击时间攻击如何判断是误报还是真是攻击如果是真实攻击怎么判断他攻击是否成功如果成功怎么处理先看如果是公司内部的再看内部人员有没有相关操作如果不是公司人员业务的操作那就是攻击了然后分析分析它写的安全设备能否它进行过滤拦截如果它确实能绕过那就应该攻击成功了成功的话赶紧上报做应急响应做出相应处理添加过滤规则修改数据库中能修改的数据比如管理员账号密码啥的安全设备的部署尝试在自己服务器上开通防火墙使用接入的在控制台添加要防护的网站域名然后修改解析设置把流量解析到获取经验简单防火墙检查防火墙的状态默认防火墙版本启动防火墙关闭防火墙默认禁止访问所有开放端口开放端口禁止外部访问删除已经添加过的规则允许此访问所有的本机端口删除上面的规则查看规则显示行号删除第三条规则关闭禁止对端口的访问打开来自的请求的端口蜜罐就是一台全是漏洞的靶机吸引黑客来进攻蜜罐系统然后掌握黑客的信息就类似于诱饵尝试搭建微步的蜜罐或者其他的获取经验网上常见面试问题那么如果叫你部署一个蜜罐你会开放哪些端口为什么你认为企业的主机哪些端口存在风险你认为企业应该注意哪些地方的加固端口文件传输协议端口用来捕获黑客的爆破行为端口端口链接主机服务的端口用来捕获黑客的爆破行为端口服务命令执行服务用来探测黑客对于的爆破端口端口服务的端口用来捕获黑客的攻击行为特征数据库开放端口捕获黑客的爆破行为命令执行等行为端口用来捕获黑客对于数据库的爆破行为命令执行等行为远程桌面端口用来捕获黑客的爆破行为下面的相对来说不重要端口端口捕获黑客未授权访问的攻击黑客利用写秘钥写执行计划任务等的攻击端口服务端口黑客利用永恒之蓝的攻击行为黑客的账号爆破通俗简单理解爆破账号密码端口端口用来捕获黑客爆破端口的行为并且查看黑客利用等组件命令执行的操作存储过程的利用端口捕获黑客的利用共享的攻击当蜜罐部署在内网比如在端口部署一个假的页面吸引黑客攻击内网渗透全流程内网渗透流程每一步操作都要有所了解对不了解的可以百度或者进行重点加固加深印象拿到跳板后先探测一波内网存活主机用命令查看跳板机是否在域内探测存活主机提权提取进行横向移动定位位置查看是否有能直接提权域管的漏洞拿到控制权后进行提权然后制作黄金票据做好维权清理一路过来的日志擦擦脚印信息收集主机信息收集网络配置操作系统名称版本软件信息服务信息用户列表本地管理员信息端口信息补丁信息查防火墙域内信息收集是否有域使用命令可以查看网关地址的地址以及判断当前主机是否在域内通过反向解析查询命令来解析域名的地址使用解析出来的地址进行对比判断域控制器和服务器是否在同一台服务器上登录域信息域内信息收集探测内网探测内网端口信息收集查询域信息查询域主机查询域用户查找域控查域用户信息查询域管理员查询域信息内网环境不出网通过实现内网代理正向链接隧道协议不同出网的方式不同如对应对应测试是否是特定协议或端口出网蓝队初级问的不难应急响应比较多一些不过多看一些网上的资料也可以基本漏洞扫描和渗透能力日志分析安全设备告警分析能看懂安全产品重点加深应急响应方面的就可以了其次就是日志分析和安全设备告警的分析渗透测试',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-01-04 17:12:44',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github-lp.github.io/blog/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">AiENG</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://raw.githubusercontent.com/GitHub-LP/img/main/all/wx_2.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/wx_2.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/GitHub-LP/img/main/all/zfb_2.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/zfb_2.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Adobe/" style="font-size: 1.05rem;">Adobe<sup>1</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C<sup>3</sup></a><a href="/tags/Kali/" style="font-size: 1.05rem;">Kali<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>11</sup></a><a href="/tags/Logitech/" style="font-size: 1.05rem;">Logitech<sup>1</sup></a><a href="/tags/Markdown/" style="font-size: 1.05rem;">Markdown<sup>1</sup></a><a href="/tags/OneForAll/" style="font-size: 1.05rem;">OneForAll<sup>1</sup></a><a href="/tags/Vscode/" style="font-size: 1.05rem;">Vscode<sup>1</sup></a><a href="/tags/cmd/" style="font-size: 1.05rem;">cmd<sup>1</sup></a><a href="/tags/steam/" style="font-size: 1.05rem;">steam<sup>1</sup></a><a href="/tags/steam/" style="font-size: 1.05rem;">steam++<sup>1</sup></a><a href="/tags/win/" style="font-size: 1.05rem;">win<sup>9</sup></a><a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 1.05rem;">作业<sup>30</sup></a><a href="/tags/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/" style="font-size: 1.05rem;">命令文档<sup>4</sup></a><a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 1.05rem;">影视<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">笔记<sup>1</sup></a><a href="/tags/%E7%BD%91%E5%AE%89/" style="font-size: 1.05rem;">网安<sup>22</sup></a><a href="/tags/%E7%BD%91%E5%B7%A5/" style="font-size: 1.05rem;">网工<sup>2</sup></a><a href="/tags/%E7%BD%97%E6%8A%80/" style="font-size: 1.05rem;">罗技<sup>1</sup></a><a href="/tags/%E8%87%AA%E7%94%A8/" style="font-size: 1.05rem;">自用<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 1.05rem;">软件<sup>1</sup></a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.05rem;">面试<sup>2</sup></a><a href="/tags/%E9%AB%98%E8%BE%BE/" style="font-size: 1.05rem;">高达<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">5</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E5%AE%89/" itemprop="url">网安</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E7%BD%91%E5%AE%89/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>网安</span></a><a class="article-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>面试</span></a></span></div></div><h1 class="post-title" itemprop="name headline">护网蓝队（初级）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-05-31T00:37:58.000Z" title="发表于 2023-05-31 08:37:58">2023-05-31</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-01-04T09:12:44.223Z" title="更新于 2024-01-04 17:12:44">2024-01-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="护网蓝队（初级）"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为成都"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>成都</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/"><header><a class="post-meta-categories" href="/categories/%E7%BD%91%E5%AE%89/" itemprop="url">网安</a><a href="/tags/%E7%BD%91%E5%AE%89/" tabindex="-1" itemprop="url">网安</a><a href="/tags/%E9%9D%A2%E8%AF%95/" tabindex="-1" itemprop="url">面试</a><h1 id="CrawlerTitle" itemprop="name headline">护网蓝队（初级）</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">AiENG</span><time itemprop="dateCreated datePublished" datetime="2023-05-31T00:37:58.000Z" title="发表于 2023-05-31 08:37:58">2023-05-31</time><time itemprop="dateCreated datePublished" datetime="2024-01-04T09:12:44.223Z" title="更新于 2024-01-04 17:12:44">2024-01-04</time></header><p>护网蓝队（初级）<br>主要是会看各种攻击payload，注意常见的payload<br>练习各种漏洞的利用方法，学会看利用漏洞的请求长什么样，payload长什么样，payload长什么样<br>给个请求包，能不能认出来是攻击流量，是的话是什么漏洞的利用；</p>
+<p>蓝队（初级）：基本漏洞扫描和渗透能力 日志分析 安全设备告警分析 能看懂安全产品</p>
+<p>前置知识概况<br>信息收集<br>服务器的相关信息（真实IP，系统类型，版本开放端口，WAF等）<br>网站指纹识别（CMS，CDN，证书，DNS记录等）<br>whois信息，姓名，备案，邮件，电话反差（邮箱丢社工库，社工准备等）<br>子域名收集，旁站，C段等<br>Google hacking 针对化搜索，PDF文件，中间件版本，弱口令扫描等<br>扫描网站目录结构，爆后台，网站banner，测试文件，备份等敏感文件泄露等<br>协议，通用漏洞，github源码等<br>漏洞挖掘<br>浏览网站，查看网站的规模，功能点，特点<br>端口，弱口令，目录扫描，对响应端口进行漏洞探测，mysql，ftp，ssh弱口令等<br>开始检测漏洞，如XSS，SSRF，SQL注入，代码执行，命令执行，越权访问，<br>任意文件读取，下载，文件包含，远程命令执行，弱口令，编辑器漏洞，暴力破解，重放攻击，服务器漏洞检测，最后使用漏扫工具等<br>CMS：内容管理系统，位于前端和后端办公系统，一般可以搜索可能会存在对应的源码或者版本漏洞<br>CDN：构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，<br>使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。<br>利用谷歌搜索，寻找后台、用户信息泄露，源代码泄露，未授权访问，mdb文件下载，网站配置密码,php远程文件包含漏洞等信息。<br>中间件：是一种独立的系统软件或服务程序，连接应用程序或系统，即使不同接口仍然能交互信息<br>漏洞利用&amp;提权<br>mysql提权、serv-u提权、oracle提权<br>linux内核漏洞提权<br>windows溢出提权</p>
+<p>OWASP Top10<br>SQL注入<br>失效的身份认证<br>敏感数据泄露<br>XML外部实体(XXE)<br>失效的访问控制<br>安全配置错误<br>跨站脚本(XSS)<br>不安全的反序列化<br>使用含有已知漏洞的组件<br>不足的日志记录和监控</p>
+<p>基础漏洞：<br>SQL注入<br>原理（口头语言）：用户的输入嵌入到SQL语句中，然后被当做代码执行<br>成因：未对用户输入的数据做验证或者处理（预编译）<br>防御：预编译（能够防止SQL注入，但是不能处理%和_特殊字符）<br>黑名单：对特殊字符进行转义过滤替换或者删除、<br>白名单：对用户输入进行限制（正则表达式限制）、<br>规范编码和字符集（编码不同可能会导致宽字节注入）、<br>参数化查询（原理）：不会把参数的内容当做sql语句执行，完成编译后套用参数运行<br>分类：<br>头注入：UA（useragent）,Referer,cookie<br>联合查询注入<br>报错注入 需要用到的函数：updataxml（）<br>rand()：产生一个0-1之间随机数，rand(0),随机产生一个0-1的随机数，运行多次产生的结果一样<br>floor()：向下取整，floor(rand()*2)，随机产生0和1两个数<br>group by：分组排列<br>count()：统计数量<br>concat()：将字符串连接起来</p>
+<p>布尔盲注<br>堆叠： 1：select··<br>时间盲注：需要用到的函数<br>if(condition,A,B) –如果条件成立返回A，否则返回B；用啥语句替代if？？？？？？？<br>sleep(num) –表示延迟几秒<br>left(m,n) –从左向右截取字符串 m 返回其前 n 位<br>substr(m,1,1) –取字符串 m 的左边第一位起，1字长的字符串<br>ascii(m) –返回字符 m 的 ASCII 码<br>length(m) –返回字符串 m 的长度<br>count (column_name) –返回指定列的值的数目<br>宽字节注入：<br>PHP utf-8编码 数据库GBK编码<br>PHP防御函数：magic_quotes_gpc()<br>成因：PHP发送请求到mysql时经过一次gbk编码，PHP会将获取到的数据进行魔术引号的处理，<br>因为GBK是双字节编码，所以我们提交的%df这个字符和转译的反斜杠组成了新的汉字，<br>然后数据库处理的时候是根据GBK去处理的，然后单引号就逃逸了出来。<br>原理：在数据库中使用宽字符集，在web中没有考虑这个问题。<br>由于0XDF27在web中是两个字符，在php中会对0x27进行转义，把0XDF27变成0XDF5c27</p>
+<p>面试中问题<br>被过滤了要怎么办<br>(1)过滤*关键字*使用大小写绕过，双写绕过，URL编码绕过<br>(2)过滤*特殊字符*，*空格*使用URL编码绕过<br>(4)过滤*注释*使用添加一个闭合方式绕过，逻辑运算绕过<br>(5)过滤*单引号*使用宽字符绕过(前提PHP使用GBK编码)<br>(6)过滤*明码数据*使用burpsuite加密发送数据绕过<br>代替空格：&#x2F;**&#x2F;、%0a、%0b、%a0</p>
+<p>如何写shell：利用日志写shell：<br>root权限，GPC关闭，知道文件路径 的前提<br>日志路径：var&#x2F;log&#x2F;mysqld.sql<br>select ‘一句话’ into outfile ‘路径’<br>select ‘一句话’ into dumpfile ‘路径’</p>
+<p>取得了sql权限之后，要怎么获取系统权限<br>Mysql_UDF 提权 利用了root高权限，创建一个可以调用 cmd 的函数的 udf.dll 动态链接库，<br>导出 udf.dll 文件后，我们就可以直接在命令框输入 cmd<br>限制条件：<br>1-MySQL 数据库没有开启安全模式（确认secure_file_priv&#x3D;’’是否为空）<br>2-已知的数据库账号具有对MySQL数据库insert和delete的权限，最好是root最高权限。<br>3-shell有写入到数据库安装目录的权限。<br>MOF提权：基本上在Windows Server 2003的环境下才可以成功。<br>原理是C:&#x2F;Windows&#x2F;system32&#x2F;wbem&#x2F;mof&#x2F;目录下的mof文件每隔几秒就会被系统执行一次，<br>因为这个 MOF 里面有一部分是 VBS脚本，所以可以利用这个VBS脚本 来调用CMD来执行系统命令<br>如果 MySQL有权限操作 mof 目录的话，就可以来执行任意命令了。<br>mysql5.0以上和5.0以下有什么区别：<br>5.0以下没有系统表（information_schema）,只能暴力跑表；<br>为何一个mysql数据库的站，只有一个80端口开放：<br>1、更改了数据库端口，没有扫描出来。<br>2、站库分离。<br>3、3306 端口不对外开放</p>
+<p>常见payload：<br>xss有几种：<br>XSS跨站脚本攻击<br>原理: 通过拼接恶意的html代码，利用js语句来执行攻击，实现对用户浏览器的攻击<br>类型:<br>- 反射型：攻击代码在url里，输出在http响应中<br>- 存储型：把用户输入的数据存储在服务器上<br>- DOM型：通过修改页面的DOM结点形成xss<br>反射和dom的区别: DOM-XSS是javascript处理输出， 而反射性xss是后台程序处理<br>XSS绕过：<br>1.大小写<br>2.js伪协议<br>3.没有分号<br>4.Flash<br>5.Html5新标签<br>6.Fuzz进行测试<br>7.双层标签绕过<br>修复防御：<br>1.对输出内容实体化编码，对JavaScript的事件进行过滤<br>2.对重要的cookie设置httpOnly, 防止客户端通过document.cookie读取 cookie，此 HTTP头由服务端设置。<br>3.csp防范xss<br>常问问题：<br>- xss蠕虫产生条件：用户之间产生交互行为的页面都可能造成xss蠕虫，不一定需要存储型xss<br>有shell的情况下如何长久控制：<br>后台登录处加一段记录登录账号密码的js，判断是否登录成功，<br>如果登录成功，就把账号密码记录到一个生僻的路径的文件中或者直接发到自己的网站文件中。在登录后才可以访问的文件中插入XSS脚本<br>存储型XSS的危害<br>此类型的XSS漏洞是由于恶意攻击代码被持久化保存到服务器上，然后被显示到HTML页面之中。<br>这类漏洞经常出现在用户评论的页面，攻击者精心构造XSS代码，保存到数据库中，当其他用户再次访问这个页面时，就会触发并执行恶意的XSS代码，从而窃取用户的敏感信息</p>
+<p>CSRF跨站请求伪造攻击&#x2F;客户端请求伪造<br>原理：利用一个可以发起网络请求的服务当作跳板来攻击内部其他服务。<br>常出现在：1.能够对外发起网络请求的地方 2.请求远程服务器资源的地方 3.数据库内置功能 4.邮件系统 5.文件处理 6.在线处理工具<br>协议:<br>file：在有回显的情况下，利用 file 协议可以读取任意内容<br>dict：泄露安装软件版本信息，查看端口，操作内网redis服务等<br>gopher：gopher支持发出GET、POST请求：可以先截获get请求包和post请求包，再构造成符合gopher协议的请求。<br>gopher协议是ssrf利用中一个最强大的协议(俗称万能协议)。可用于反弹shell<br>http&#x2F;s：探测内网主机存活</p>
+<p>引发ssrf漏洞的PHP函数<br>file_get_contents：文件写入字符串，当url是内网文件的时候，会先去把这个文件的内容读出来再写入，导致了文件读取。<br>fsockopen(主机名称，端口号码，错误号的接受变量，错误提示的接受变量，超时时间)<br>curl_exec()：执行一个curl会话<br>· 绕过：<br>利用@：<a target="_blank" rel="noopener" href="http://example/">http://example</a><span class="label label-primary">@127.0.0.1。</span><br>例如：<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a><span class="label label-primary">@10.10.10.10与http</span>:&#x2F;&#x2F;10.10.10.10 请求是相同的<br>添加端口号：<a target="_blank" rel="noopener" href="http://127.0.0.1:8080/">http://127.0.0.1:8080</a><br>利用短地址：<a target="_blank" rel="noopener" href="http://dwz.cn/11SMa">http://dwz.cn/11SMa</a><br>ip 地址进制转换<br>DNS解析 <a target="_blank" rel="noopener" href="http://127.0.0.1.xip.io/%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%90%91%E4%BB%BB%E6%84%8Fip%E7%9A%84%E5%9F%9F%E5%90%8D%EF%BC%9Axip.io">http://127.0.0.1.xip.io/可以指向任意ip的域名：xip.io</a><br>· 利用：利用伪协议对内网信息进行探测<br>具体利用的方式：file协议查看文件、dict协议探测端口、ophergopher协议 支持GET&amp;POST请求，<br>同时在攻击内网ftp、redis、telnet、Memcache上有极大作用。利用 gopher协议访问redis反弹shell<br>防御：禁止跳转；禁用不需要的协议；黑名单内网ip</p>
+<p>XSS CSRF SSRF区别：<br>xss与csrf区别<br>XSS：跨站脚本攻击；利用站点内的信任用户盗取cookie<br>CSRF：跨站请求伪造攻击；通过伪装成信任用户请求信任的网站</p>
+<p>CSRF与SSRF区别<br>CSRF（跨站&#x2F;客户端请求伪造) &#x3D;&gt; 浏览器因为JS偷偷发送数据包<br>SSRF（服务器端请求伪造）&#x3D;&gt; 服务器因为你传的参数偷偷发送数据包<br>C or S &#x3D;&gt; C客户端（client）s服务端（server）</p>
+<p>文件上传<br>原理：由于程序员在对用户文件上传部分的控制不足或者处理缺陷，<br>而导致用户可以越过其本身权限向服务器上传可执行的动态脚本文件，<br>并通过此脚本文件获得了执行服务端命令的能力。</p>
+<p>服务器解析漏洞：<br>apache:<br>绕过程序检测：当碰到不认识的扩展名时，将会从后向前解析，直到碰到认识的扩展名为止，如果都不认识，则会暴露其源代码。<br>在上传文件时，判断文件名是否是PHP，ASP，ASPX，ASA，CER等脚本扩展名，<br>如果是，则不允许上传，这是可以构造类似1.php.rar等扩展名绕过程序检测，并配合解析漏洞获取webshell</p>
+<p>iis<br>当建*.asa ，*.asp，*.cer格式的文件夹时，其目录下的任何扩展名的文件都将被IIS当做asp文件进行解析<br>当文件为*.asp;1.jpg时，IIS会以asp脚本来执行</p>
+<p>nginx<br>原理：Nginx实际上是PHP CGI解析漏洞，在PHP配置文件中有一个关键选项cgi.fi:x_pathinfo，一般是默认开启的，<br>所以**解析到不存在的文件时，PHP会向前递归解析，于是造成了解析漏洞。**<br>攻击者可以上传木马文件，然后在URL后面加上xxx.php(可随便命名），就可以获得网站的webshell。<br>比如访问<a target="_blank" rel="noopener" href="http://www.xxx.com/1.jpg/1.php%EF%BC%8C%E6%AD%A4%E6%97%B61.jpg%E4%BC%9A%E8%A2%AB%E5%BD%93%E5%81%9Aphp%E8%84%9A%E6%9C%AC%E6%9D%A5%E8%A7%A3%E6%9E%90%EF%BC%8C%E8%BF%99%E9%87%8C%E7%9A%841.php%E6%98%AF%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E3%80%82">http://www.xxx.com/1.jpg/1.php，此时1.jpg会被当做php脚本来解析，这里的1.php是不存在的。</a></p>
+<p>绕过方法<br>1.黑名单<br>a.后缀名不完整 .php5 .phtml等<br>b. .htacess<br>c.大小写<br>d.在数据包中 后文件缀名前加空格<br>e.后缀名前加<br>f.加上::$DATA<br>g.未循环验证，可以使用x.php..类似的方法<br>2.白名单:%00截断,图片马,条件竞争<br>防御：<br>1.后端验证：采用服务端验证模式<br>2.后缀验证：基于白名单，黑名单过滤<br>3.MIME验证：基于上传自带类型艰检测<br>4.内容检测：文件头，完整性检测<br>5.自带函数过滤<br>6.WAF防护软件：宝塔、云盾等<br>将上传文件与web服务隔离<br>白名单过滤、限制上传文件类型<br>文件上传路径设置为不可执行权限<br>检查文件上传路径<br>自带函数检测<br>自定义函数检测<br>图片渲染<br>对上传文件重命名<br>对文件内容压缩，重新生成文件内容<br>检查文件内容</p>
+<p>文件包含<br>原理：程序员开发的时候没有对包含的文件进行严格的过滤，攻击者可以构造自己的图片木马文件当做PHP执行<br>常见包含函数：<br>include（）：找不到被包含的文件时只会产生警告，脚本将继续运行。<br>include_once（）：找不到被包含的文件时只会产生警告，脚本将继续运行。如果该文件中的代码已经被包含，则不会再次包含，即程序只调用一次。<br>require（）：找不到被包含的文件时会产生致命错误，并停止脚本运行。<br>require_once（）：找不到被包含的文件时会产生致命错误，并停止脚本运行。如果该文件中的代码已经被包含，则不会再次包含，即程序只调用一次。</p>
+<p>PHP封装协议：<br>file:&#x2F;&#x2F; — 访问本地文件系统<br>http:&#x2F;&#x2F; — 访问 HTTP(s) 网址<br>ftp:&#x2F;&#x2F; — 访问 FTP(s) URLs<br>php:&#x2F;&#x2F; — 访问各个输入&#x2F;输出流（I&#x2F;O streams）<br>zlib:&#x2F;&#x2F; — 压缩流<br>data:&#x2F;&#x2F; — 数据（RFC 2397）<br>glob:&#x2F;&#x2F; — 查找匹配的文件路径模式<br>phar:&#x2F;&#x2F; — PHP 归档<br>ssh2:&#x2F;&#x2F; — Secure Shell 2<br>rar:&#x2F;&#x2F; — RAR<br>ogg:&#x2F;&#x2F; — 音频流<br>expect:&#x2F;&#x2F; — 处理交互式的流<br>利用：<br>利用..&#x2F; 目录遍历<br>利用解析漏洞结合文件上传 绕过waf获取webshell<br>利用PHP封装协议 读取php文件源码<br>防御<br>PHP中使用open_basedir限制访问在指定的目录区域<br>过滤 点 . 反斜杠 &#x2F; ，防止跨目录<br>禁止服务器远程文件包含<br>尽量不要使用动态包含，可以在需要包含的页面固定写好<br>危害：敏感信息泄露（任何文件读取）；PHP伪协议，文件包含读源码，命令执行;<br>配合图片马获取webshell</p>
+<p>PHP序列化和反序列化<br>原理：（在变量可控并且进行了unserialize操作的地方注入序列化对象，实现代码执行）未对用户输入的序列化字符串进行检测，<br>导致攻击者可以控制反序列化过程，从而导致代码执行，SQL注入，目录遍历等不可控后果。<br>在反序列化的过程中自动融发了某些魔术方法。当进行反序列化的时候就有可能会触发对象中的一些魔术方法。<br>序列化函数 ：serialize()：将对象转换成字符串<br>反序列化函数：unserialize()：将字符串转换成对象<br>魔术方法(文件中存在可利用的类，类中有魔术方法<br>__wakeup() &#x2F;&#x2F;使用unserialize时触发<br>__sleep() &#x2F;&#x2F;使用serialize时触发<br>__construct() &#x2F;&#x2F;创建对象时触发<br>__destruct() &#x2F;&#x2F;对象被销毁时触发<br>__call() &#x2F;&#x2F;在对象上下文中调用不可访问的方法时触发<br>__callStatic() &#x2F;&#x2F;在静态上下文中调用不可访问的方法时触发<br>__get() &#x2F;&#x2F;用于从不可访问的属性读取数据<br>__set() &#x2F;&#x2F;用于将数据写入不可访问的属性<br>__isset() &#x2F;&#x2F;在不可访问的属性上调用isset()或empty()触发<br>__unset() &#x2F;&#x2F;在不可访问的属性上使用unset()时触发<br>__toString() &#x2F;&#x2F;把类当作字符串使用时触发<br>__invoke() &#x2F;&#x2F;当脚本尝试将对象调用为函数时触发<br>绕过wakeup的要点是：成员属性数目大于实际数目时可绕过<br>流量分析（PCAP 文件）<br>1、大量的404请求：目录扫描<br>2、大量select *** from：SQL注入<br>3、连续一个IP的多端口请求或多个IP的几个相同端口：端口扫描<br>4、爆破账号密码：ip.addr219.239.105.18 and http.request.uri matches “edit|uoload|modify”<br>5、用菜刀链接的包，post请求 ip.addr219.239.105.18 and htpp.request.method&#x3D;&#x3D;POST<br>高危端口<br>21 FTP 可以爆破，FTP匿名登录，anonymous&#x2F;anonymous<br>22 SSH<br>23 telnet<br>80 web<br>81 web<br>139&#x2F;445 IPC，网络共享（MS17-010）<br>1433 mssql<br>1521 oracle<br>3306 mysql<br>3389 rdp<br>6379 redis?? Redis未授权访问，因为没有密码导致谁都能进，能造成信息泄露，反弹shell，向服务器写入ssh公钥，直接用私钥连接<br>7001&#x2F;7002 weblogic，各种漏洞<br>8080 Tomcat，PUT上传webshell，但是JSP是被过滤的，可以使用1.jsp%00；后台部署war包；幽灵猫命令执行<br>8888<br>50050 cobalt strike的默认开放端口<br>log4j反序列化<br>核心原理为，在正常的log处理过程中对**${**这两个紧邻的字符做了检测，一旦匹配到类似 于表达式结构的字符串就会触发替换机制，<br>将表达式的内容替换为表达式解析后的内容，而不 是表达式本身，从而导致攻击者构造符合要求的表达式供系统执行 。<br>漏洞成因、特征：在打印日志的时候，如果日志内容中包含关键词 ${，攻击者就能将关键字所包含的内容当作变量来替换成任何攻击命令，并且执行。</p>
+<p>安全工具<br>nmap<br>1 .-Pn，禁ping扫描，nmap在对主机执行扫描动作之前，会发送一个ICMP包，去探测远程主机是否存活，<br>如果对方有返回的话，nmap才认为这个扫描任务执行是有意义的，并且开始扫描。<br>如果没有返回包，则不执行扫描。如果对方主机设置了禁ping，在不加-Pn的情况下，是不会返回扫描结果的。<br>2 .-sP，此命令的意义在于是令nmap去用ping命令去探测对方主机的存活情况。<br>如果对方的机器能ping通的话，就告诉我们host is up。不绝对准确，因为可能对方主机设置了禁ping。<br>3 .-sS，半开放扫描。在TCP协议的三次握手的过程当中。<br>会由客户端向服务端发送SYN包，如果服务器的端口是开放的，服务器则会返回一个SYN包+一个ACK，第三部再由客户端验证服务器的ACK是否正确，<br>如若正确，则发送ACK包到服务器以便完成TCP连接的建立。这种扫描的原理就是客户端只执行第一步，<br>服务端执行第二步，第三步不做了。这种方法的好处是可以规避日志的记录。<br>4 .-sT，TCP协议三次完全扫描。<br>5 .-PR，使用ARP协议，进行局域网内主机扫描，这种扫描会令速度更快，并且结果更加准确。<br>6 .-O，用于探测对方主机的操作系统的。<br>7 .-p，计算机的端口是有65535个的。如果扫描全端口，则写作-p 1-65535<br>8 .-T4，默认情况是3。<br>9 .-P0，用于在禁ping时探测主机存活。</p>
+<p>sqlmap获取webshell的参数<br>sqlmap的–os-shell参数取得shell<br>本质：写入两个 php 文件，其中的一个可以让我们用来执行命令，而另外一个可以让我们可以上传文件。<br>执行条件有三个：<br>1）网站必须是root权限<br>2）攻击者需要知道网站的绝对路径<br>3）GPC为off，php主动转义的功能关闭<br>渗透思路<br>goby，扫描工具<br>可以根据情形定制一些常见端口扫描<br>不仅可以扫IP ，还可以扫域名<br>扫描的时候也可以加上 想测试是否存在的 漏洞的 POC<br>可以自定义暴破字典<br>最后报告还可以导入导出<br>渗透测试流程：如果给你一个网站,你的渗透测试思路是什么?&#x2F;拿到一个待检测的站，你觉得应该先做什么？<br>渗透测试步骤 信息收集 漏洞挖掘 漏洞扫描 漏洞利用 权限提升 日志清理 总结报告以及修复方案</p>
+<p>信息收集<br>a、服务器的相关信息（真实ip，系统类型，版本，开放端口，WAF等）<br>b、网站指纹识别（包括，cms，cdn，证书等），dns记录<br>c、whois信息，姓名，备案，邮箱，电话反查（邮箱丢社工库，社工准备等）<br>e、子域名收集，旁站，C段等<br>f、google hacking针对化搜索，pdf文件，中间件版本，弱口令扫描等<br>g、扫描网站目录结构，爆后台，网站banner，测试文件，备份等敏感文件泄漏等<br>h、传输协议，通用漏洞，exp，github源码等<br>漏洞挖掘<br>a、浏览网站，看看网站规模，功能，特点等<br>b、端口，弱口令，目录等扫描,对响应的端口进行漏洞探测，比如 rsync,心脏出血，mysql,ftp,ssh弱口令等。<br>c、XSS，SQL注入，上传，命令注入，CSRF，cookie安全检测，敏感信息，通信数据传输，暴力破解，任意文件上传，<br>越权访问，未授权访问，目录遍历，文件 包含，重放攻击（短信轰炸），服务器漏洞检测，最后使用漏扫工具等<br>漏洞扫描<br>开始检测漏洞，如XSS,XSRF,sql注入，代码执行，命令执行，越权访问，目录读取，任意文件读取，下载，文件包含，远程命令执行，弱口令，上传，编辑器漏洞，暴力破解等<br>漏洞利用<br>利用msf nc一些工具拿下shell或者一些其他的权限<br>权限提升<br>a、mysql提权，udf提权，mof提权，serv-u提权，oracle提权<br>b、windows 溢出提权<br>c、linux脏牛,内核漏洞提权 日志清理 总结报告及修复方案</p>
+<p>搜索引擎<br>FOFA语法<br>查询指定cms的管理系统：app&#x3D;”cms”<br>domain&#x3D; 搜索根域名带有xx的网站。例：domain&#x3D;“baidu.com”<br>host&#x3D;从url中搜索网站注意搜索要用host作为名称。例：host&#x3D; “.edu.cn”<br>port&#x3D; 查找对应443端口的资产。例：port&#x3D;3389<br>protocol&#x3D; 搜索制定协议类型(在开启端口扫描的情况下有效)。例：protocol&#x3D;ssh cert&#x3D;搜索证书(https或者imaps等)中带有域名的资产。例：cert&#x3D;baidu.com<br>banner&#x3D; 搜索协议中带有账户文本的资产。例：banner&#x3D;users &amp;&amp; protocol&#x3D;ftp<br>type&#x3D;搜索所有协议资产，支持subdomain和service两种。例：type&#x3D;servicce<br>server&#x3D;&#x3D; 搜索服务器、中间件名称。例：server&#x3D;apache<br>高级语法需要用管道符连接如：‘|| ‘ ‘&amp;&amp;’，如下：<br>body&#x3D;”后台”&amp;&amp;domain&#x3D;”xxx.com” 查询指定域名的后台<br>Header&#x3D;”Hikvision” 找摄像头<br>谷歌语法<br>| intext 寻找正文中含有关键字的网页<br>| intitle 寻找标题中含有关键字的网页<br>| allintitle 用法和intitle类似，只不过可以指定多个词<br>| inurl 将返回url中含有关键词的网页<br>| allinurl 用法和inurl类似，只不过可以指定多个词,&#x2F;&#x2F; 所有关键词必须出现在在文本中<br>| site 指定访问的站点<br>| filetype 指定访问的文件类型<br>| cache 显示页面的缓存版本<br>使用shodan，夸克<br>钟馗之眼（zoomeye），侧重于web容器，指纹的搜索。<br>指纹搜索：例如：php app:dedecms var:5.7。<br>app:组件名称，例如：app:apache。<br>ver:组件版本，例如：ver:2.0。<br>OS:操作系统，例如：os:window。<br>Service:服务名称，例如：service:vpn。<br>Cidr:网段，例如：cidr:192.168.1.1&#x2F;24。<br>Devic:设备名，例如：devic:router。<br>keyword:关键字查询，例如：keyword:technology。<br>尝试弱口令：例如：php app：phpmyadmin。<br>搜索摄像设备：1.DVRDVS-Webs，2.JAWS等等。</p>
+<p>wireshark简单过滤规则<br>过滤 ip: 过滤源 ip 地址:ip.src&#x3D;&#x3D;1.1.1.1;,目的 ip 地址:ip.dst&#x3D;&#x3D;1.1.1.1;<br>过滤端口: 过滤 80 端口:tcp.port&#x3D;&#x3D;80,源端口:tcp.srcport&#x3D;&#x3D;80,目的端口:tcp.dstport&#x3D;&#x3D;80<br>协议过滤: 直接输入协议名即可,如http协议； 参考见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/scanf/_linux/article/details/100995055">https://blog.csdn.net/scanf\_linux/article/details/100995055</a><br>模式过滤: 过滤 get&#x2F;post 包 http.request.mothod&#x3D;&#x3D;”GET&#x2F;POST</p>
+<p>菜刀 蚁剑 冰蝎 流量特征<br>菜刀特征<br>使用了base64的方式加密了发送给“菜刀马”的指令，其中的两个关键payload z1和z2，这个名字是可变的<br>蚁剑特征<br>默认的USER-agent请求头 是 antsword xxx，<br>但是可以通过修改：&#x2F;modules&#x2F;request.js 文件中请求UA 绕过其中流量最中明显的特征为<span class="label label-primary">@ini_set(</span>“display_errors”,”0”);<br>这段代码基本是所有 WebShell客户端链接PHP类WebShell都有的一种代码蚁剑混淆加密后还有一个比较明显的特征,即为参数名大多以“_0x……&#x3D;”这种形式（下划线可替换），<br>所以以_0x开头的参数名也很可能就是恶意流量</p>
+<p>冰蝎看包没有发现什么特征，但是可以发现它是POST请求的<br>1、Accept头有application&#x2F;xhtml+xmlapplication&#x2F;xmlapplication&#x2F;signed- exchange属于弱特征（UA头的浏览器版本很老）<br>2、特征分析Content-Type: application&#x2F;octet-stream 这是一个强特征查阅资料可 知octet-stream的意思是，只能提交二进制，<br>而且只能提交一个二进制，如果提交文件的话，只能提交一个文件,后台接收参数只能有一个，而且只能是流（或者字节数组）；很少使用<br>冰蝎2特征：<br>默认Accept字段的值很特殊,而且每个阶段都一样冰蝎内置了十余种UserAgent ，每次连接 shell 会随机选择一个进行使用。但都是比较老的，r容易被检测到，<br>但是可以在burp中修改ua头。Content-Length: 16, 16就是冰蝎2连接的特征</p>
+<p>冰蝎3特征：<br>冰蝎3取消动态密钥获取，目前很多waf等设备都做了冰蝎2的流量特征分析，所以3取消了动态 密 钥获取；<br>php抓包看包没有发现什么特征，但是可以发现它是POST请求的<br>1）Accept头application&#x2F;xhtml+xmlapplication&#x2F;xmlapplication&#x2F;signed- exchange属于弱特征<br>2）ua头该特征属于弱特征。通过burp可以修改,冰蝎3.0内置的默认16个userAgent都比较老。<br>现实生活中很少有人使用，所以这个也可以作为waf规则特征jsp抓包特征分析Content-Type: application&#x2F;octet-stream 这是一个强特征查阅资料可知 octet-stream的意思是，<br>只能提交二进制，而且只能提交一个二进制，如果提交文件的话，只能提交一个文件,后台接收参数只能有一个，而且只能是流（或者字节数组）；很少使用</p>
+<p>接下来是比较少接触的一部分，关于应急响应<br>网站被挂马如何应急<br>1.取证，登录服务器，备份，检查服务器敏感目录，查毒（搜索后门文件-注意文件的时间， 用户，后缀等属性），调取日志（系统，中间件日志，WAF日志等）；<br>2.处理，恢复备份（快照回滚最近一次），确定入侵方法（漏洞检测并进行修复）<br>3.溯源，查入侵IP，入侵手法（网路攻击事件）的确定等<br>4.记录，归档——–预防-事件检测-抑制-根除-恢复-跟踪-记录通用漏洞的应对等其他 安全应急事件<br>入侵排查的流程<br>1、检查系统账号安全查看服务器是否有弱口令，远程管理端口<br>是否公开查看服务器是否有可疑账号：cmd输入lusrmgr.msc命令查看服务器是否存在隐藏账号、克隆账号结合日志，查看管理员登录时间，用户名是否存在异常<br>2、检查异常端口、进程检查端口连接情况，是否有远程连接、可疑连接：a、netstat -ano查看目前的网络连接，<br>定位可疑的ESTABLISHEDb、根据netstat 定位出的pid，再通过tasklist命令进行进程定位 tasklist | findstr “PID”<br>3、检查启动项、计划任务、服务win+r：输入msconfig，查看异常启动项win+r：输入regedit，打开注册表，查看开机启动项<br>4、检查系统相关信息win+r：输入systeminfo查看系统信息<br>5、日志分析win+r：输入eventvwr.msc,打开事件查看器导出应用程序日志，安全日志，系统日志，利用log parser分析</p>
+<p>判断威胁情报是否有误，就看wireshark，进行流量分析判断是否为正常业务操作</p>
+<p>判断自己是否给getshell（就是给用D盾查杀）<br>webshell：<br>查web日志，分析攻击流量<br>扫webshell<br>排查网站目录，查看最近更改的文件<br>shell：<br>查看未知端口，未知进程<br>排查恶意流量，锁定感染进程<br>有安全设备就看安全设备</p>
+<p>如果一台服务器被入侵后,你会如何做应急响应?<br>》》》查日志，查服务，查进程，查看是否有可疑登陆，新增账号</p>
+<p>内网报警处理方式（可能会问的会不一样，不会直接问）<br>首先就要是地位到具体的那一台机器，既然报警那就说明知道了具体的漏洞类型，加相应的补丁打上，<br>以linux为主（一般都会问linux的），查看&#x2F;var&#x2F;log&#x2F;secure系统日志，查看登录失败的记录，还有Linux历史命令–&gt;home目录的bash_histor，查看执行过的命令。<br>在利用webshell或者是shell查杀工具查杀，查看tmp目录下是非有带有免杀的木马。彻底清除。再到全流量分析的机子上看，是非有经过其他的机器。<br>拿到攻击ip之后到线上的一些网站查看主机类型，比如360或者微步上，查看是非是傀儡机，vps跳板，或者是国内个人云主机。<br>如果是个人云主机，就可以通过whois查看是非有最近绑定的域名，或者绑定者的邮箱。<br>知道邮箱之后就可以反查询出qq号说多少，再利用社工查询到手机号，<br>到一个知名的网站上查询这个手机号有没有注册过什么网站，可以去这些网站通过撞库的方法登入，这样就可以拿到这个攻击者的身份证，学校，地址这些了。<br>（思路是应急响应;加固;溯源）</p>
+<p>被攻击后日志文件或者木马文件被删除排查：lsof恢复被删除的文件，然后查日志，查服务，查进程，查看是否有新增的账号<br>安全设备进行报警如何看是否是外界的攻击，即是否是误报，或是内部人员进行的操作：查看报警日志，对报警的数据进行分析，看是不是内部人员的操作，还是真实的攻击<br>流量分析是否是误报：分析流量数据包，可以用wireshark，分析流量是不是正常的业务操作</p>
+<p>服务中了webshell 怎样从日志找webshell位置，被拿shell后怎么应急，怎样快速定位shell<br>从日志流量文件开始，先定位位置查看敏感目录tmp usr&#x2F;sbin etc&#x2F;ssh ，对新创建文件，修改文件等进行查看，找特殊权限文件比如777 。<br>流量的话从ua和playload去分析。比如菜刀连jsp木马：第一个参数是a-q，这个是不会变的，第二个是编码，第三个是playload。日志的话从找到的shell时间点去关联分析，可以还原攻击手法<br>快速定位就是看进程和内存看占用时间长和占用率高的</p>
+<p>设备报警，SQL注入的报警，能看到攻击时间，攻击ip，payload，如何判断是误报还是真是攻击，如果是真实攻击，怎么判断他攻击是否成功，如果成功怎么处理<br>先看ip，如果ip是公司内部的再看内部人员有没有相关操作，如果不是公司人员业务的操作那就是攻击了，<br>然后分析payload,分析它写的payload安全设备能否它进行过滤拦截，如果它确实能绕过，那就应该攻击成功了，<br>成功的话赶紧上报，做应急响应，做出相应处理，添加过滤规则，修改数据库中能修改的数据比如管理员账号密码啥的</p>
+<p>安全设备的部署<br>WAF<br>尝试在自己服务器上开通防火墙，使用cname接入的，在控制台添加要防护的网站域名，然后修改dns解析设置把流量解析到waf。（获取经验）<br>ufw（简单防火墙Uncomplicated FireWall）<br>检查防火墙的状态（默认 inactive） # ufw status<br>防火墙版本 # ufw version<br>启动ufw防火墙 # ufw enable<br>关闭ufw防火墙 # ufw disable<br>默认禁止访问所有 # ufw default deny<br>开放22&#x2F;TCP端口 # ufw allow 22&#x2F;tcp<br>开放53端口(tcp&#x2F;udp) # ufw allow 53<br>禁止外部访问 # ufw deny 3306<br>删除已经添加过的规则 # ufw delete allow 22<br>允许此IP访问所有的本机端口 # ufw allow from 192.168.1.100<br>删除上面的规则 # ufw delete allow from 192.168.1.100<br>查看规则，显示行号 # ufw status numbered<br>删除第三条规则 # ufw delete 3<br>关闭ufw # ufw disable<br>禁止对8888端口的访问 # ufw deny 8888<br>打开来自192.168.0.1的tcp请求的22端口 # ufw allow proto tcp from 192.168.0.1 to any port 22</p>
+<p>蜜罐：就是一台全是漏洞的靶机，吸引黑客来进攻蜜罐系统，然后掌握黑客的信息 （就类似于诱饵）<br>尝试搭建微步的Hfish蜜罐或者其他的（获取经验）<br>网上常见面试问题：<br>那么如果叫你部署一个蜜罐，你会开放哪些端口，为什么&#x2F;&#x2F;你认为企业的主机哪些端口存在风险&#x2F;&#x2F;你认为企业应该注意哪些地方的加固<br>21端口：FTP文件传输协议端口，用来捕获黑客的FTP爆破行为<br>22端口：SSH端口 链接Linux主机SSH服务的端口，用来捕获黑客的SSH爆破行为<br>23端口：Telnet服务，命令执行服务，用来探测黑客对于telnet的爆破<br>80端口&#x2F;443端口：WEB服务的端口，用来捕获黑客的WEB攻击行为特征<br>1521：oracle数据库开放端口，捕获黑客的oracle爆破行为,UDF命令执行等行为<br>3306：MYSQL端口，用来捕获黑客对于mysql数据库的爆破行为，UDF命令执行等行为<br>3389：Windows远程桌面端口，用来捕获黑客的爆破行为<br>下面的相对来说不重要<br>6379端口：REDIS端口，捕获黑客REDIS未授权访问的攻击，黑客利用redis写ssh秘钥，写webshell，执行计划任务等的攻击<br>445端口：SMB服务端口-黑客利用永恒之蓝Enternalblue的攻击行为，黑客的SMB账号爆破（通俗简单理解，爆破windows账号密码）<br>1433端口：Microsoft SQLserver端口，用来捕获黑客爆破1433端口的行为，并且查看黑客利用sqlserver xp_cmdshell,sp_cmdshell等组件命令执行的操作，存储过程的利用<br>135、139端口：捕获黑客的利用RPC共享的攻击（当蜜罐部署在内网）<br>比如在8080端口，部署一个假的vpn页面，吸引黑客攻击</p>
+<p>内网渗透全流程<br>内网渗透流程：（每一步操作都要有所了解，对不了解的，可以百度或者进行重点加固，加深印象）<br>拿到跳板后，先探测一波内网存活主机，用net user &#x2F;domian命令查看跳板机是否在域内，<br>探测存活主机、提权、提取hash、进行横向移动，定位dc位置，查看是否有能直接提权域管的漏洞，拿到dc控制权后进行提权，<br>然后制作黄金票据做好维权，清理一路过来的日志擦擦脚印<br>信息收集<br>主机信息收集<br>1.网络配置 ipconfig &#x2F;all<br>2.操作系统 systeminfo | findstr &#x2F;B &#x2F;C:”OS 名称” &#x2F;C:”OS 版本”<br>3.软件信息 systeminfo | findstr &#x2F;B &#x2F;C:”OS Name” &#x2F;C:”OS Version”<br>4.服务信息 wmic &#x2F;namespace:rootsecuritycenter2 path antivirusproduct GET displayName,productState, pathToSignedProductExe<br>5.用户列表 net user<br>6.本地管理员信息 net localgroup administrators<br>7.端口信息 netstat –ano<br>8.补丁信息 wmic qfe get Caption,Description,HotFixID,InstalledOn<br>9.查防火墙 netsh firewall show config<br>域内信息收集<br>是否有域 使用ipconfig &#x2F;all命令可以查看网关IP地址、DNS的IP地址以及判断当前主机 是否在域内：通过反 向解析查询命令nslookup来解析域名的IP地址，<br>使用解析出来的IP地 址进行对比，判断域控制器和 DNS服务器是否在同一台服务器上<br>登录域信息 net config workstation 域内信息收集<br>ICMP探测内网 for &#x2F;L %I in (1,1,254) DO <span class="label label-primary">@ping</span>-w 1 -n 1 192.168.174.%I | findstr “TTL&#x3D;”<br>ARP探测内网<br>端口信息收集<br>查询域信息 net view &#x2F;domain<br>查询域主机 net view &#x2F;domain:XXX<br>查询域用户 net group &#x2F;domain<br>查找域控 Nslookup -type&#x3D;SRV _ldap._tcp net time &#x2F;domain net group “Domain Controllers” &#x2F;domain<br>查域用户信息 net user &#x2F;domain<br>查询域管理员 net group “Domain Admins” &#x2F;domain<br>查询域sid信息 whoami &#x2F;all<br>内网环境不出网<br>1.通过webshell实现内网socket代理<br>2.正向链接<br>3.ssh隧道<br>4.协议不同出网的方式不同，如dns对应dnscat2 tcp对应<br>5.测试是否是特定协议或端口出网</p>
+<p>蓝队初级问的不难，应急响应比较多一些，不过多看一些网上的资料也可以 ，基本漏洞扫描和渗透能力 日志分析 安全设备告警分析 能看懂安全产品，<br>重点加深应急响应方面的就可以了，其次就是日志分析和安全设备告警的分析，渗透测试；</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">AiENG</div><div class="post-copyright__author_desc">今日未做,明日未有</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/')">护网蓝队（初级）</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://raw.githubusercontent.com/GitHub-LP/img/main/all/wx_2.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/wx_2.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/GitHub-LP/img/main/all/zfb_2.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/zfb_2.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=护网蓝队（初级）&amp;url=http://example.com/2023/05/31/%E6%8A%A4%E7%BD%91%E8%93%9D%E9%98%9F%EF%BC%88%E5%88%9D%E7%BA%A7%EF%BC%89/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">AiENG</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__category-list"><a class="post-meta__box__categoryes" href="/categories/%E7%BD%91%E5%AE%89/"><span class="categoryes-punctuation"> <i class="anzhiyufont anzhiyu-icon-inbox"></i></span>网安<span class="categoryesPageCount">3</span></a></div><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E7%BD%91%E5%AE%89/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>网安<span class="tagsPageCount">22</span></a><a class="post-meta__box__tags" href="/tags/%E9%9D%A2%E8%AF%95/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>面试<span class="tagsPageCount">2</span></a></div></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/25/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">渗透测试面试问题合集</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/01/phpstudy2018-mysql%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">phpStudy2018 mysql启动失败问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2023/05/25/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86/" title="渗透测试面试问题合集"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-25</div><div class="title">渗透测试面试问题合集</div></div></a></div><div><a href="/2023/05/24/owasp-top-10/" title="OWASP Top 10"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-24</div><div class="title">OWASP Top 10</div></div></a></div><div><a href="/2021/11/12/%E7%AC%AC%E5%85%AD%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%97%85%E6%AF%92/" title="第六章----计算机病毒"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-12</div><div class="title">第六章----计算机病毒</div></div></a></div><div><a href="/2021/11/12/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E8%8C%83%EF%BC%88%E4%B8%89%EF%BC%89/" title="第四章----网络攻击与防范（三）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-12</div><div class="title">第四章----网络攻击与防范（三）</div></div></a></div><div><a href="/2021/11/12/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E8%8C%83%EF%BC%88%E4%B8%80%EF%BC%89/" title="第四章----网络攻击与防范（一）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-12</div><div class="title">第四章----网络攻击与防范（一）</div></div></a></div><div><a href="/2021/11/12/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E8%8C%83%EF%BC%88%E4%BA%8C%EF%BC%89/" title="第四章----网络攻击与防范（二）"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-11-12</div><div class="title">第四章----网络攻击与防范（二）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">AiENG</h1><div class="author-info__desc">今日未做,明日未有</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/GitHub-LP" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://raw.githubusercontent.com/GitHub-LP/img/main/all/CSDN_Blog_daoxian.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://raw.githubusercontent.com/GitHub-LP/img/main/all/CSDN_SYS.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/01/04/hello-world/" title="Hello World">Hello World</a><time datetime="2024-01-04T08:18:17.690Z" title="发表于 2024-01-04 16:18:17">2024-01-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/19/%E5%85%B3%E4%BA%8EKali%E9%83%A8%E7%BD%B2OneForAll%EF%BC%8C%E4%B8%8D%E8%83%BD%E8%BF%90%E8%A1%8C%E9%97%AE%E9%A2%98/" title="关于Kali部署OneForAll，不能运行问题">关于Kali部署OneForAll，不能运行问题</a><time datetime="2023-09-19T00:00:00.000Z" title="发表于 2023-09-19 08:00:00">2023-09-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/12/win10%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E4%B8%8E%E9%98%B2%E8%8C%83%E7%AD%96%E7%95%A5/" title="win10系统优化与防范策略">win10系统优化与防范策略</a><time datetime="2023-09-12T00:00:00.000Z" title="发表于 2023-09-12 08:00:00">2023-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/%E9%80%83%E5%87%BAverifier-%E6%97%A0%E9%99%90%E8%93%9D%E5%B1%8F/" title="逃出Verifier 无限蓝屏">逃出Verifier 无限蓝屏</a><time datetime="2023-08-25T04:10:01.000Z" title="发表于 2023-08-25 12:10:01">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/06/vscode-msys2%E9%85%8D%E7%BD%AEc-c%E7%8E%AF%E5%A2%83/" title="Vscode +Msys2配置C/C++环境">Vscode +Msys2配置C/C++环境</a><time datetime="2023-06-06T12:09:06.000Z" title="发表于 2023-06-06 20:09:06">2023-06-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:lp1931steam@gmail.com?subject=联系我" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30163677" title="CSDN"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/all/123.jpg" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/GitHub-LP" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/104214240" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://img.shields.io/badge/AiENG-%40%E4%B8%8A%E7%8F%AD%E6%91%B8%E9%B1%BC%E4%B8%AD~-blue?style=social&amp;logo=alchemy&amp;logoColor=blue" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">服务</div><div class="footer-links"><a class="footer-item" title="51la统计" target="_blank" rel="noopener" href="https://v6.51.la/">51la统计</a><a class="footer-item" title="十年之约" target="_blank" rel="noopener" href="https://www.foreverblog.cn/">十年之约</a><a class="footer-item" title="开往" target="_blank" rel="noopener" href="https://github.com/travellings-link/travellings">开往</a></div></div><div class="footer-group"><div class="footer-title">主题</div><div class="footer-links"><a class="footer-item" title="文档" target="_blank" rel="noopener" href="https://hexo.io/docs/">文档</a><a class="footer-item" title="主题" target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a><a class="footer-item" title="源码" target="_blank" rel="noopener" href="https://github.com/GitHub-LP/blog">源码</a></div></div><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="即刻短文" href="/essay/">即刻短文</a><a class="footer-item" title="我的相册" href="/album/">我的相册</a><a class="footer-item" title="留言板" href="/comments/">留言板</a></div></div><div class="footer-group"><div class="footer-title">协议&amp;声明</div><div class="footer-links"><a class="footer-item" title="隐私协议" href="/privacy/">隐私协议</a><a class="footer-item" title="免责声明" href="/disclaimer/">免责声明</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/img/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/img/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/GitHub-LP/img/main/img/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a><a class="github-badge" target="_blank" href="https://www.travellings.cn/go.html" style="margin-inline:5px" data-title="随机一个开往" title="随机一个开往"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://www.travellings.cn/assets/logo.gif" alt="随机一个开往"/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20245201" style="margin-inline:5px" data-title="萌ICP备20245201号" title="萌ICP备20245201号"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://icp.gov.moe/?keyword=20245201" alt="萌ICP备20245201号"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="AiENG" target="_blank">AiENG</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20245201" title="萌ICP备20245201号">萌ICP备20245201号</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github-lp.github.io/blog/" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github-lp.github.io/blog/about/" title="关于">关于</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">18</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github-lp.github.io/blog/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Adobe/" style="font-size: 0.88rem;">Adobe<sup>1</sup></a><a href="/tags/C/" style="font-size: 0.88rem;">C<sup>3</sup></a><a href="/tags/Kali/" style="font-size: 0.88rem;">Kali<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>11</sup></a><a href="/tags/Logitech/" style="font-size: 0.88rem;">Logitech<sup>1</sup></a><a href="/tags/Markdown/" style="font-size: 0.88rem;">Markdown<sup>1</sup></a><a href="/tags/OneForAll/" style="font-size: 0.88rem;">OneForAll<sup>1</sup></a><a href="/tags/Vscode/" style="font-size: 0.88rem;">Vscode<sup>1</sup></a><a href="/tags/cmd/" style="font-size: 0.88rem;">cmd<sup>1</sup></a><a href="/tags/steam/" style="font-size: 0.88rem;">steam<sup>1</sup></a><a href="/tags/steam/" style="font-size: 0.88rem;">steam++<sup>1</sup></a><a href="/tags/win/" style="font-size: 0.88rem;">win<sup>9</sup></a><a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 0.88rem;">作业<sup>30</sup></a><a href="/tags/%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3/" style="font-size: 0.88rem;">命令文档<sup>4</sup></a><a href="/tags/%E5%BD%B1%E8%A7%86/" style="font-size: 0.88rem;">影视<sup>1</sup></a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">笔记<sup>1</sup></a><a href="/tags/%E7%BD%91%E5%AE%89/" style="font-size: 0.88rem;">网安<sup>22</sup></a><a href="/tags/%E7%BD%91%E5%B7%A5/" style="font-size: 0.88rem;">网工<sup>2</sup></a><a href="/tags/%E7%BD%97%E6%8A%80/" style="font-size: 0.88rem;">罗技<sup>1</sup></a><a href="/tags/%E8%87%AA%E7%94%A8/" style="font-size: 0.88rem;">自用<sup>1</sup></a><a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 0.88rem;">软件<sup>1</sup></a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 0.88rem;">面试<sup>2</sup></a><a href="/tags/%E9%AB%98%E8%BE%BE/" style="font-size: 0.88rem;">高达<sup>1</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><a id="switch-commentBarrage" href="javascript:anzhiyu.switchCommentBarrage();" title="开关弹幕"><i class="anzhiyufont anzhiyu-icon-danmu"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="7604861446" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.music.163.com/m/playlist?id=7604861446&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/20/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 AiENG 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/20/2021 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "https://img.shields.io/badge/AiENG-%40%E4%B8%8B%E7%8F%AD%E5%95%A6~-blue?style=social&amp;logo=alchemy&amp;logoColor=blue";
+        img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+        img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://aienghf-twikoo.hf.space',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://aienghf-twikoo.hf.space',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"><script async src="/js/anzhiyu/comment_barrage.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://aienghf-twikoo.hf.space',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script id="click-show-text" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
